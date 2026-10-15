@@ -1,0 +1,222 @@
+/* ===== Professional Navy Blue, Gold & White Theme ===== */
+
+:root {
+    --navy: #14213D;
+    --navy-light: #243B60;
+    --gold: #D9A441;
+    --gold-light: #F4C96B;
+    --white: #FFFFFF;
+    --background: #F4F6FA;
+    --text: #303847;
+    --muted: #657084;
+    --border: #DCE2EB;
+}
+
+/* Page background and text */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Navigation bar */
+header {
+    background: var(--navy);
+    box-shadow: 0 4px 15px rgba(20, 33, 61, 0.15);
+}
+
+nav,
+.navbar {
+    background: transparent;
+}
+
+.logo {
+    color: var(--gold);
+}
+
+nav ul li a,
+.navbar ul a {
+    color: var(--white);
+}
+
+nav ul li a:hover,
+.navbar ul a:hover {
+    color: var(--gold-light);
+}
+
+/* Hero banner */
+.hero {
+    background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--navy-light)
+    );
+    color: var(--white);
+}
+
+.hero h1 span {
+    color: var(--gold-light);
+}
+
+.hero h2 {
+    color: #E0E7F1;
+}
+
+.hero p {
+    color: #EDF1F7;
+}
+
+/* Buttons */
+.btn {
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+    border-radius: 7px;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background: var(--gold-light);
+    color: var(--navy);
+    border-color: var(--gold-light);
+}
+
+/* White content cards */
+.section {
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid #E7EBF2;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(20, 33, 61, 0.07);
+}
+
+.section h2 {
+    color: var(--navy);
+    border-bottom: 3px solid var(--gold);
+}
+
+.section h3 {
+    color: var(--navy);
+}
+
+.section p {
+    color: var(--text);
+}
+
+/* Benefit cards */
+.benefit-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 9px;
+}
+
+.benefit-card p {
+    color: var(--muted);
+}
+
+/* Contact information cards */
+.contact-grid > div {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+}
+
+.contact-grid a,
+.section a {
+    color: var(--navy-light);
+}
+
+/* Social media links */
+.social-links a {
+    background: var(--navy);
+    color: var(--white);
+    border: 1px solid var(--navy);
+    border-radius: 7px;
+}
+
+.social-links a:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+}
+
+/* Booking and feedback form */
+.form-group label {
+    color: var(--navy);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid #C9D2E0;
+    border-radius: 7px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--gold);
+    border-color: var(--navy-light);
+}
+
+/* Privacy checkbox */
+.privacy-check {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.privacy-check input {
+    accent-color: var(--navy);
+}
+
+/* Privacy section highlights */
+.privacy-section {
+    border-left: 5px solid var(--gold);
+}
+
+.privacy-list strong {
+    color: var(--navy);
+}
+
+/* Form status message */
+.status-message {
+    background: #FFF8E8;
+    color: var(--navy);
+    border-left: 4px solid var(--gold);
+    padding: 12px;
+    border-radius: 5px;
+}
+
+/* Cookie notice */
+.cookie-notice {
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(20, 33, 61, 0.18);
+}
+
+/* Footer */
+footer {
+    background: var(--navy);
+    color: var(--white);
+    border-top: 4px solid var(--gold);
+}
+
+footer p {
+    color: var(--white);
+}
+
+/* Responsive card spacing */
+@media (max-width: 768px) {
+    .section {
+        margin: 25px 15px;
+        padding: 25px;
+    }
+}
