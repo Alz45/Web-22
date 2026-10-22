@@ -1,17 +1,31 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact Details</title>
     </head>
     <body>
         <h1>Contact Details</h1>
         <p>Email: Alice13@gmail.com</p>
         <p>Phone: 123-654-7980</p>
-        <p>Location: Dubai, UAE</p>
-        </ul> 
+        <p onmouseover="this.style.color = '#b8860b'; this.style.fontWeight = 'bold'">
+            Location: Dubai, UAE
+        </p>
+        <button type="button" onclick="window.location.href='mailto:Alice13@gmail.com'">
+            Email Alice
+        </button>
+
+        <h2>Keyboard Event</h2>
+        <label for="key-input">Type here to see the key you press:</label>
+        <input id="key-input" type="text"
+            onkeydown="document.getElementById('key-message').textContent = 'You pressed: ' + event.key">
+        <p id="key-message" aria-live="polite"></p>
 
         <h2>Professional Links</h2>
         <ul>
             <li><a href="https://www.linkedin.com/in/alice13">LinkedIn</a></li>
             <li><a href="https://github.com/alice13">GitHub</a></li>
+        </ul>
     </body>
 </html>
