@@ -1,14 +1,330 @@
-<html>
-    <head> 
-        <title>Problem Solving</title>
-    </head>
-    <body>
-        <h1>Problem Solving</h1>
-        <ul>
-            <li>Identify the problem</li>
-            <li>Generate potential solutions</li>
-            <li>Evaluate and select the best solution</li>
-            <li>Implement the solution effectively</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurant Digital Solutions</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">The Golden Fork</a>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#case-study">Case Study</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#booking">Booking & Feedback</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">BIDT DIGITAL TRANSFORMATION CASE STUDY</p>
+
+            <h1>Better Dining Through <span>Digital Innovation</span></h1>
+
+            <p>
+                Discover how digital technology can improve restaurant
+                bookings, customer communication, and the overall dining
+                experience.
+            </p>
+
+            <a href="#booking" class="btn">Book a Table / Send Feedback</a>
+        </div>
+    </section>
+
+    <!-- Business Context -->
+    <section id="case-study" class="section">
+        <h2>Business Context</h2>
+
+        <p>
+            The Golden Fork is a fictional restaurant exploring how digital
+            technology can improve its business operations. Traditional
+            telephone bookings and paper-based feedback can be time-consuming
+            and difficult to organise.
+        </p>
+
+        <p>
+            The goal of this digital transformation project is to provide
+            customers with a convenient online contact and booking request
+            form, strengthen social media engagement, and improve
+            communication. The proposed website demonstrates a simple,
+            cost-effective solution without requiring a live database.
+        </p>
+
+        <div class="benefit-grid">
+            <article class="benefit-card">
+                <h3>Online Enquiries</h3>
+                <p>Make it easier for customers to submit booking requests.</p>
+            </article>
+
+            <article class="benefit-card">
+                <h3>Customer Feedback</h3>
+                <p>Give customers a convenient way to share their experiences.</p>
+            </article>
+
+            <article class="benefit-card">
+                <h3>Digital Engagement</h3>
+                <p>Connect customers with the restaurant through social media.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="section social-section">
+        <h2>Connect With Us</h2>
+
+        <p>
+            Follow our social media channels for restaurant updates,
+            menu announcements, special offers, and events.
+        </p>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/"
+               target="_blank" rel="noopener noreferrer">
+                Facebook
+            </a>
+
+            <a href="https://www.instagram.com/"
+               target="_blank" rel="noopener noreferrer">
+                Instagram
+            </a>
+
+            <a href="https://x.com/"
+               target="_blank" rel="noopener noreferrer">
+                Twitter / X
+            </a>
+        </div>
+
+        <p class="small-text">
+            These are example social media links. Replace them with the
+            restaurant's official profiles.
+        </p>
+    </section>
+
+    <!-- Contact Details -->
+    <section id="contact" class="section">
+        <h2>Contact the Restaurant</h2>
+
+        <div class="contact-grid">
+            <div>
+                <h3>Address</h3>
+                <p>123 High Street, Manchester, UK</p>
+            </div>
+
+            <div>
+                <h3>Telephone</h3>
+                <p><a href="tel:+441611234567">0161 123 4567</a></p>
+            </div>
+
+            <div>
+                <h3>Email</h3>
+                <p>
+                    <a href="mailto:bookings@example.com">
+                        bookings@example.com
+                    </a>
+                </p>
+            </div>
+
+            <div>
+                <h3>Opening Hours</h3>
+                <p>Monday–Sunday: 12:00–22:00</p>
+            </div>
+        </div>
+
+        <p class="small-text">
+            The restaurant details above are fictional examples.
+            Update them before publishing the website.
+        </p>
+    </section>
+
+    <!-- Interactive Form -->
+    <section id="booking" class="section">
+        <h2>Booking Request & Customer Feedback</h2>
+
+        <p>
+            Complete the form below to prepare an email for the restaurant.
+            No account or website database is required.
+        </p>
+
+        <form id="restaurantForm">
+
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    maxlength="100"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    maxlength="254"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="requestType">Type of Request *</label>
+                <select id="requestType" name="requestType" required>
+                    <option value="">Select an option</option>
+                    <option value="Table Booking">Table Booking</option>
+                    <option value="Customer Feedback">Customer Feedback</option>
+                    <option value="General Enquiry">General Enquiry</option>
+                </select>
+            </div>
+
+            <div id="bookingFields" hidden>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time">
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" name="guests">
+                        <option value="1">1 guest</option>
+                        <option value="2" selected>2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5 guests</option>
+                        <option value="6">6 guests</option>
+                        <option value="7 or more">7 or more guests</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message or Feedback *</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    maxlength="2000"
+                    placeholder="Enter your booking requirements, questions, or feedback..."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="privacy-check">
+                <input type="checkbox" id="privacyConsent" required>
+
+                <label for="privacyConsent">
+                    I have read the
+                    <a href="#privacy">privacy notice</a> and understand
+                    that my information will be included in an email
+                    prepared by this website. *
+                </label>
+            </div>
+
+            <button type="submit" class="btn">
+                Generate Email
+            </button>
+
+            <p id="formStatus" class="status-message"
+               role="status" aria-live="polite"></p>
+
+        </form>
+
+        <p class="small-text">
+            Important: This demonstration prepares an email using your
+            device's default email application. It does not send, store,
+            or confirm a restaurant booking automatically.
+        </p>
+    </section>
+
+    <!-- Privacy and Data Protection -->
+    <section id="privacy" class="section privacy-section">
+        <h2>Privacy, Security & Data Protection</h2>
+
+        <p>
+            Protecting customer information is an important part of
+            digital transformation. This demonstration applies several
+            privacy-conscious principles.
+        </p>
+
+        <ul class="privacy-list">
+            <li>
+                <strong>Data minimisation:</strong>
+                Only request information needed to handle the enquiry.
+            </li>
+
+            <li>
+                <strong>Transparency:</strong>
+                Explain how form information will be used before customers
+                submit it.
+            </li>
+
+            <li>
+                <strong>Data protection:</strong>
+                A real production website should use HTTPS, appropriate
+                access controls, and secure handling of customer information.
+            </li>
+
+            <li>
+                <strong>GDPR:</strong>
+                The restaurant should establish a lawful basis for processing,
+                provide an appropriate privacy notice, and follow applicable
+                data protection and retention requirements.
+            </li>
+
+            <li>
+                <strong>Cookie awareness:</strong>
+                This demonstration does not use tracking cookies or
+                analytics. Non-essential tracking, if added later, must
+                be handled in accordance with applicable consent rules.
+            </li>
         </ul>
-        <p>Problem solving is the process of finding solutions to difficult or complex issues. It involves identifying the problem, generating potential solutions, evaluating and selecting the best solution, and implementing it effectively. Problem solving skills are essential in both personal and professional life, as they enable individuals to overcome challenges and achieve their goals.</p>
+
+        <p class="small-text">
+            This page is an educational prototype, not a complete legal
+            compliance solution. A real restaurant must publish its own
+            privacy notice and assess its actual data processing.
+        </p>
+    </section>
+
+    <!-- Cookie Notice -->
+    <aside id="cookieNotice" class="cookie-notice" hidden>
+        <p>
+            This demonstration does not use tracking cookies.
+            If optional analytics or advertising cookies are introduced,
+            the website will need an appropriate consent mechanism.
+        </p>
+
+        <button type="button" id="closeCookieNotice" class="btn">
+            Close Notice
+        </button>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Golden Fork | Digital Transformation Case Study</p>
+        <p>Created for BIDT Assessment 1</p>
+    </footer>
+
+    <script src="problem-solving.js"></script>
+</body>
 </html>
