@@ -30,6 +30,29 @@ nav,
     background: transparent;
 }
 
+.portfolio-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding: 16px 5%;
+}
+
+.portfolio-nav .logo {
+    margin: 0;
+}
+
+.portfolio-nav ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .logo {
     color: var(--gold);
 }
