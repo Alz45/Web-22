@@ -6,7 +6,7 @@
     <title>My Personal Portfolio</title>
     <link rel="stylesheet" href="Style.css">
 </head>
-<body>
+<body class="portfolio-home">
 
     <!-- Navigation Bar -->
     <header>
@@ -23,6 +23,15 @@
             </ul>
         </nav>
     </header>
+
+    <div class="home-banner">
+        <img
+            class="home-banner-image"
+            src="restaurant-interior.jpg"
+            alt="Warmly lit restaurant dining room with tables and booth seating"
+        >
+        <h2 class="home-banner-title">Bella Cucina</h2>
+    </div>
 
     <!-- Home Page -->
     <section class="hero">
@@ -86,10 +95,53 @@
         </p>
     </section>
 
+    <aside id="cookieNotice" class="cookie-notice" aria-label="Cookie and privacy choices">
+        <p>
+            This website does not currently use optional tracking cookies,
+            analytics, or share your personal information. Your choice is
+            saved in this browser; no optional cookies are set either way.
+        </p>
+        <div class="cookie-notice-actions">
+            <button type="button" id="acceptCookies" class="btn">
+                Accept
+            </button>
+            <button type="button" id="declineCookies" class="btn cookie-decline">
+                Decline
+            </button>
+        </div>
+        <p id="cookieChoiceStatus" class="cookie-choice-status" role="status" hidden>
+            Your choice could not be saved in this browser.
+        </p>
+    </aside>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Alina Fatima | Personal Portfolio</p>
     </footer>
 
+    <script>
+        const cookieNotice = document.getElementById("cookieNotice");
+        const cookieChoiceStatus = document.getElementById("cookieChoiceStatus");
+        const cookieConsentKey = "portfolio-cookie-consent";
+
+        try {
+            if (localStorage.getItem(cookieConsentKey)) {
+                cookieNotice.hidden = true;
+            }
+        } catch (error) {
+            cookieChoiceStatus.hidden = false;
+        }
+
+        ["accept", "decline"].forEach((choice) => {
+            document.getElementById(`${choice}Cookies`).addEventListener("click", () => {
+                try {
+                    localStorage.setItem(cookieConsentKey, choice);
+                    cookieNotice.hidden = true;
+                } catch (error) {
+                    cookieChoiceStatus.hidden = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
