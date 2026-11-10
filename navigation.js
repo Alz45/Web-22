@@ -19,11 +19,6 @@ document.querySelectorAll(".portfolio-nav").forEach((nav, index) => {
     toggle.append(icon);
     toggle.append(document.createTextNode("Menu"));
 
-    const brand = document.createElement("a");
-    brand.className = "menu-brand";
-    brand.href = "index.html";
-    brand.textContent = "Bella Cucina";
-
     const setMenuOpen = (isOpen) => {
         menu.hidden = !isOpen;
         toggle.setAttribute("aria-expanded", String(isOpen));
@@ -53,6 +48,12 @@ document.querySelectorAll(".portfolio-nav").forEach((nav, index) => {
     });
 
     nav.insertBefore(toggle, menu);
-    nav.insertBefore(brand, toggle);
+    if (!document.body.classList.contains("portfolio-home")) {
+        const brand = document.createElement("a");
+        brand.className = "menu-brand";
+        brand.href = "index.html";
+        brand.textContent = "Bella Cucina";
+        nav.insertBefore(brand, toggle);
+    }
     nav.classList.add("menu-ready");
 });
