@@ -33,7 +33,7 @@ nav,
 .portfolio-nav {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 12px 24px;
     padding: 16px 5%;
@@ -47,7 +47,7 @@ nav,
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     gap: 8px 20px;
     margin: 0;
@@ -521,9 +521,10 @@ footer p {
     margin-bottom: 8px;
 }
 
-.contact-page .form-group input {
+.contact-page .form-group input,
+.contact-page .form-group select,
+.contact-page .form-group textarea {
     width: 100%;
-    max-width: 420px;
     padding: 10px 12px;
     font: inherit;
 }
