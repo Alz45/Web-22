@@ -242,6 +242,24 @@ nav ul li a:hover,
     color: #F5F0E8;
 }
 
+/* Portfolio home content cards */
+.portfolio-home > .hero,
+.portfolio-home > .section {
+    width: min(900px, calc(100% - 40px));
+    box-sizing: border-box;
+    margin: 24px auto;
+}
+
+.portfolio-home > .hero {
+    padding: 64px 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.portfolio-home > .section {
+    padding: 28px;
+}
+
 /* Buttons */
 .btn {
     background: var(--gold);
@@ -457,6 +475,22 @@ footer p {
     .section {
         margin: 25px 15px;
         padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-home > .hero,
+    .portfolio-home > .section {
+        width: calc(100% - 30px);
+        margin: 24px auto;
+    }
+
+    .portfolio-home > .hero {
+        padding: 48px 20px;
+    }
+
+    .portfolio-home > .section {
+        padding: 20px;
     }
 }
 
