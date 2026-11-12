@@ -112,7 +112,15 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="btn">Generate Email</button>
+                    <button type="submit" class="btn">Submit</button>
+                    <div id="paymentMethodField" class="form-group" hidden>
+                        <label for="payment-method">Payment Method *</label>
+                        <select id="payment-method" name="paymentMethod">
+                            <option value="">Select a payment method</option>
+                            <option value="Credit/debit card">Credit/debit card</option>
+                        </select>
+                        <p class="small-text">This records your preference only; no payment is processed on this website.</p>
+                    </div>
                     <p id="restaurantFormStatus" class="status-message" role="status" aria-live="polite"></p>
                 </form>
 
@@ -157,11 +165,18 @@
             const restaurantForm = document.getElementById("restaurantForm");
             const requestType = document.getElementById("requestType");
             const bookingFields = document.getElementById("bookingFields");
+            const paymentMethodField = document.getElementById("paymentMethodField");
+            const paymentMethod = document.getElementById("payment-method");
             const restaurantFormStatus = document.getElementById("restaurantFormStatus");
 
-            requestType.addEventListener("change", () => {
-                bookingFields.hidden = requestType.value !== "Table Booking";
-            });
+            const updateBookingFields = () => {
+                const isTableBooking = requestType.value === "Table Booking";
+                bookingFields.hidden = !isTableBooking;
+                paymentMethodField.hidden = !isTableBooking;
+                paymentMethod.required = isTableBooking;
+            };
+
+            requestType.addEventListener("change", updateBookingFields);
 
             restaurantForm.addEventListener("submit", (event) => {
                 event.preventDefault();
@@ -178,6 +193,7 @@
                     if (formData.get("date")) emailLines.push(`Date: ${formData.get("date")}`);
                     if (formData.get("time")) emailLines.push(`Time: ${formData.get("time")}`);
                     emailLines.push(`Guests: ${formData.get("guests")}`);
+                    emailLines.push(`Payment method: ${formData.get("paymentMethod")}`);
                 }
 
                 emailLines.push("", "Message:", formData.get("message"));
