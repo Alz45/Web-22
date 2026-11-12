@@ -714,6 +714,13 @@ footer p {
 }
 
 /* Booking form on the problem-solving page */
+.problem-solving-page > .section {
+    width: min(900px, calc(100% - 40px));
+    box-sizing: border-box;
+    margin: 40px auto;
+    padding: 28px;
+}
+
 .booking-section {
     max-width: 900px;
     margin: 28px auto;
@@ -742,6 +749,12 @@ footer p {
 }
 
 @media (max-width: 600px) {
+    .problem-solving-page > .section {
+        width: calc(100% - 30px);
+        margin: 24px auto;
+        padding: 20px;
+    }
+
     .booking-section {
         margin: 0 15px 20px;
         padding: 20px;
