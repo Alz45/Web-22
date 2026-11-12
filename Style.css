@@ -699,6 +699,41 @@ footer p {
     }
 }
 
+/* Booking form on the problem-solving page */
+.booking-section {
+    max-width: 900px;
+    margin: 28px auto;
+    padding: 28px;
+}
+
+.booking-section .form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.booking-section .form-group input,
+.booking-section .form-group select,
+.booking-section .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font: inherit;
+}
+
+.booking-section .form-group input:focus-visible,
+.booking-section .form-group select:focus-visible,
+.booking-section .form-group textarea:focus-visible,
+.booking-section a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .booking-section {
+        margin: 0 15px 20px;
+        padding: 20px;
+    }
+}
+
 /* Business showcase page */
 .showcase-page {
     margin: 0;
