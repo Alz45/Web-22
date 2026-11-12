@@ -275,6 +275,20 @@ nav ul li a:hover,
     color: var(--navy);
 }
 
+.menu-title {
+    text-align: center;
+}
+
+.menu-items {
+    text-align: center;
+    justify-content: center;
+}
+
+.menu-items img {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .section p {
     color: var(--text);
 }
