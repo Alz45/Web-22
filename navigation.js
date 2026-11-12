@@ -17,7 +17,6 @@ document.querySelectorAll(".portfolio-nav").forEach((nav, index) => {
     icon.className = "menu-toggle-icon";
     icon.setAttribute("aria-hidden", "true");
     toggle.append(icon);
-    toggle.append(document.createTextNode("Menu"));
 
     const setMenuOpen = (isOpen) => {
         menu.hidden = !isOpen;
@@ -55,5 +54,12 @@ document.querySelectorAll(".portfolio-nav").forEach((nav, index) => {
         brand.textContent = "Bella Cucina";
         nav.insertBefore(brand, toggle);
     }
+
+    const bookNow = document.createElement("a");
+    bookNow.className = "menu-book-now btn";
+    bookNow.href = "contact details.html#booking";
+    bookNow.textContent = "Book Now";
+    nav.insertBefore(bookNow, toggle);
+
     nav.classList.add("menu-ready");
 });
