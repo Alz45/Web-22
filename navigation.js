@@ -57,9 +57,15 @@ document.querySelectorAll(".portfolio-nav").forEach((nav, index) => {
 
     const bookNow = document.createElement("a");
     bookNow.className = "menu-book-now btn";
-    bookNow.href = "contact details.html#booking";
+    bookNow.href = "problem solving.html#booking";
     bookNow.textContent = "Book Now";
     nav.insertBefore(bookNow, toggle);
+
+    const menuLink = document.createElement("a");
+    menuLink.className = "menu-book-now btn";
+    menuLink.href = "problem solving.html#menu";
+    menuLink.textContent = "Menu";
+    nav.insertBefore(menuLink, bookNow);
 
     nav.classList.add("menu-ready");
 });
