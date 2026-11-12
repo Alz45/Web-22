@@ -217,7 +217,7 @@
                         <option value="Pay at the restaurant">Pay at the restaurant</option>
                     </select>
                 </div>
-                <p id="restaurantFormStatus" class="status-message" role="status" aria-live="polite"></p>
+                <p id="restaurantFormStatus" class="status-message" role="status" aria-live="polite" hidden></p>
             </form>
         </section>
 
@@ -369,6 +369,7 @@
             const emailBody = emailLines.join("\n");
 
             restaurantFormStatus.textContent = "Your email application should open with the request details.";
+            restaurantFormStatus.hidden = false;
             window.location.href = `mailto:bookings@example.com?subject=${encodeURIComponent(formData.get("requestType"))}&body=${encodeURIComponent(emailBody)}`;
         });
     </script>
