@@ -113,21 +113,18 @@
                     </div>
 
                     <button type="submit" class="btn">Submit</button>
-                    <div id="paymentMethodField" class="form-group" hidden>
-                        <label for="payment-method">Payment Method *</label>
+                    <div id="paymentMethodField" class="form-group">
+                        <label for="payment-method">Payment Method (required for table bookings)</label>
                         <select id="payment-method" name="paymentMethod">
                             <option value="">Select a payment method</option>
                             <option value="Credit/debit card">Credit/debit card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Pay at the restaurant">Pay at the restaurant</option>
                         </select>
-                        <p class="small-text">This records your preference only; no payment is processed on this website.</p>
                     </div>
                     <p id="restaurantFormStatus" class="status-message" role="status" aria-live="polite"></p>
                 </form>
 
-                <p class="small-text">
-                    This form prepares an email using your device's default email application. It does not send,
-                    store, or confirm a restaurant booking automatically.
-                </p>
             </section>
 
             <section class="section" aria-labelledby="links-heading">
@@ -136,16 +133,6 @@
                     <a href="https://www.linkedin.com/in/alice13">LinkedIn</a>
                     <a href="https://github.com/alice13">GitHub</a>
                 </div>
-            </section>
-
-            <section class="section" aria-labelledby="keyboard-heading">
-                <h2 id="keyboard-heading">Keyboard Event</h2>
-                <div class="form-group">
-                    <label for="key-input">Type here to see the key you press:</label>
-                    <input id="key-input" type="text"
-                        onkeydown="document.getElementById('key-message').textContent = 'You pressed: ' + event.key">
-                </div>
-                <p id="key-message" class="key-message" aria-live="polite"></p>
             </section>
 
             <section id="restaurant-privacy" class="section privacy-section" aria-labelledby="restaurant-privacy-heading">
@@ -165,14 +152,12 @@
             const restaurantForm = document.getElementById("restaurantForm");
             const requestType = document.getElementById("requestType");
             const bookingFields = document.getElementById("bookingFields");
-            const paymentMethodField = document.getElementById("paymentMethodField");
             const paymentMethod = document.getElementById("payment-method");
             const restaurantFormStatus = document.getElementById("restaurantFormStatus");
 
             const updateBookingFields = () => {
                 const isTableBooking = requestType.value === "Table Booking";
                 bookingFields.hidden = !isTableBooking;
-                paymentMethodField.hidden = !isTableBooking;
                 paymentMethod.required = isTableBooking;
             };
 
