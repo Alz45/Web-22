@@ -50,83 +50,6 @@
                 </div>
             </section>
 
-            <section id="booking" class="section" aria-labelledby="booking-heading">
-                <h2 id="booking-heading">Booking Request &amp; Customer Feedback</h2>
-                <p>Complete the form below to prepare an email for the restaurant. No account or website database is required.</p>
-
-                <form id="restaurantForm">
-                    <div class="form-group">
-                        <label for="restaurant-name">Full Name *</label>
-                        <input type="text" id="restaurant-name" name="name" maxlength="100" autocomplete="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="restaurant-email">Email Address *</label>
-                        <input type="email" id="restaurant-email" name="email" maxlength="254" autocomplete="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="requestType">Type of Request *</label>
-                        <select id="requestType" name="requestType" required>
-                            <option value="">Select an option</option>
-                            <option value="Table Booking">Table Booking</option>
-                            <option value="Customer Feedback">Customer Feedback</option>
-                            <option value="General Enquiry">General Enquiry</option>
-                        </select>
-                    </div>
-
-                    <div id="bookingFields" hidden>
-                        <div class="form-group">
-                            <label for="booking-date">Preferred Date</label>
-                            <input type="date" id="booking-date" name="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="booking-time">Preferred Time</label>
-                            <input type="time" id="booking-time" name="time">
-                        </div>
-                        <div class="form-group">
-                            <label for="guests">Number of Guests</label>
-                            <select id="guests" name="guests">
-                                <option value="1">1 guest</option>
-                                <option value="2" selected>2 guests</option>
-                                <option value="3">3 guests</option>
-                                <option value="4">4 guests</option>
-                                <option value="5">5 guests</option>
-                                <option value="6">6 guests</option>
-                                <option value="7 or more">7 or more guests</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="restaurant-message">Message or Feedback *</label>
-                        <textarea id="restaurant-message" name="message" rows="5" maxlength="2000"
-                            placeholder="Enter your booking requirements, questions, or feedback..." required></textarea>
-                    </div>
-
-                    <div class="privacy-check">
-                        <input type="checkbox" id="restaurant-privacy-consent" required>
-                        <label for="restaurant-privacy-consent">
-                            I have read the <a href="#restaurant-privacy">privacy notice</a> and understand that my information
-                            will be included in an email prepared by this website. *
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn">Submit</button>
-                    <div id="paymentMethodField" class="form-group">
-                        <label for="payment-method">Payment Method (required for table bookings)</label>
-                        <select id="payment-method" name="paymentMethod">
-                            <option value="">Select a payment method</option>
-                            <option value="Credit/debit card">Credit/debit card</option>
-                            <option value="PayPal">PayPal</option>
-                            <option value="Pay at the restaurant">Pay at the restaurant</option>
-                        </select>
-                    </div>
-                    <p id="restaurantFormStatus" class="status-message" role="status" aria-live="polite"></p>
-                </form>
-
-            </section>
-
             <section class="section" aria-labelledby="links-heading">
                 <h2 id="links-heading">Professional Links</h2>
                 <div class="social-links">
@@ -135,58 +58,11 @@
                 </div>
             </section>
 
-            <section id="restaurant-privacy" class="section privacy-section" aria-labelledby="restaurant-privacy-heading">
-                <h2 id="restaurant-privacy-heading">Privacy Notice</h2>
-                <p>
-                    Information entered in this form is used to prepare an email to the restaurant. This website does not
-                    send or store the information. Review the email before sending it from your email application.
-                </p>
-            </section>
         </main>
 
         <footer>
             <p>&copy; 2026 Alice | Personal Portfolio</p>
         </footer>
         <script src="navigation.js"></script>
-        <script>
-            const restaurantForm = document.getElementById("restaurantForm");
-            const requestType = document.getElementById("requestType");
-            const bookingFields = document.getElementById("bookingFields");
-            const paymentMethod = document.getElementById("payment-method");
-            const restaurantFormStatus = document.getElementById("restaurantFormStatus");
-
-            const updateBookingFields = () => {
-                const isTableBooking = requestType.value === "Table Booking";
-                bookingFields.hidden = !isTableBooking;
-                paymentMethod.required = isTableBooking;
-            };
-
-            requestType.addEventListener("change", updateBookingFields);
-
-            restaurantForm.addEventListener("submit", (event) => {
-                event.preventDefault();
-                if (!restaurantForm.reportValidity()) return;
-
-                const formData = new FormData(restaurantForm);
-                const emailLines = [
-                    `Name: ${formData.get("name")}`,
-                    `Email: ${formData.get("email")}`,
-                    `Request: ${formData.get("requestType")}`
-                ];
-
-                if (formData.get("requestType") === "Table Booking") {
-                    if (formData.get("date")) emailLines.push(`Date: ${formData.get("date")}`);
-                    if (formData.get("time")) emailLines.push(`Time: ${formData.get("time")}`);
-                    emailLines.push(`Guests: ${formData.get("guests")}`);
-                    emailLines.push(`Payment method: ${formData.get("paymentMethod")}`);
-                }
-
-                emailLines.push("", "Message:", formData.get("message"));
-                const emailBody = emailLines.join("\n");
-
-                restaurantFormStatus.textContent = "Your email application should open with the request details.";
-                window.location.href = `mailto:bookings@example.com?subject=${encodeURIComponent(formData.get("requestType"))}&body=${encodeURIComponent(emailBody)}`;
-            });
-        </script>
     </body>
 </html>
