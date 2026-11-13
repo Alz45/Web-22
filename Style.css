@@ -588,26 +588,6 @@ footer p {
     flex-direction: column;
 }
 
-.contact-page header nav {
-    max-width: 1100px;
-    min-height: 72px;
-    margin: 0 auto;
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.contact-page nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 .contact-page .hero {
     padding: 64px 24px;
     text-align: center;
@@ -725,10 +705,6 @@ footer p {
 }
 
 @media (max-width: 600px) {
-    .contact-page header nav {
-        padding: 12px 18px;
-    }
-
     .contact-page .hero {
         padding: 48px 20px;
     }
