@@ -724,13 +724,10 @@ footer p {
 }
 
 /* Booking form on the problem-solving page */
-.problem-solving-page > .hero {
-    text-align: center;
-}
-
 .problem-solving-page > .hero .hero-content {
     max-width: 760px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .problem-solving-page > .section {
